@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    }
+
+.video_preview{
+    background-image: url(../images/background_image.jpg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        .video_container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 200px;
+            .streamer_video:hover{
+                box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.5);
+                filter: brightness(1.5);
+                -webkit-filter: brightness(1.5);
+            }
+            .streamer_video{
+                width: 300px;
+                margin: 10px;
+                cursor: pointer;
+                
+                transition: box-shadow 1s,filter 1s;
+                .preview_image_container{
+                    display: flex;
+                    .preview_image{
+                        width:100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .information_container{
+                    width: 100%;
+                    height: 50px;
+                    background-color: rgba(0,0,0,0.6);
+                    display: flex;
+                    align-items: center;
+                    .profile_image_container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .profile_image{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            margin: 2px 8px;
+                            background-color: #fff;
+                        }
+                    }
+                    .intro{
+                        display:flex;
+                        flex-wrap: wrap;
+                        color: white;
+                        height: 100%;
+                        width: 100%;
+                        align-items: center;
+                        padding: 3px 0;
+                        
+                        .channel{
+                            display: block;
+                            width: 150px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        .name{
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                    
+                    
+                }
+            }
+        }
+    }
+}
