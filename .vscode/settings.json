@@ -1,3 +1,11 @@
 {
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "", 
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.https": {
+    "enable": true, //set it true to enable the feature.
+    "cert": "D:/OneDrive/0前端筆記/Lidemy - FE301/react_test/todo-list/config/ssl/localhost.pem", //full path
+    "key": "D:/OneDrive/0前端筆記/Lidemy - FE301/react_test/todo-list/config/ssl/localhost-key.pem", //full path
+    }
 }
