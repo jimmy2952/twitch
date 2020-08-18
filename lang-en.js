@@ -1,4 +1,3 @@
-if (!window.I18N) window.I18N = {};
-window.I18N['en'] = {
+module.exports = {
     title: 'The streams in English'
 }

@@ -1,14 +1,27 @@
+let I18N = {
+    'zh': require('./lang-zh.js'),
+    'en': require('./lang-en.js')
+}
 let offsetValue = 0;
 let LANG = "zh";
+import"./css/style.css"
 
-function changeLang(lang){
+
+// document.querySelector(".zh").addEventListener("click", changeLang("zh"))
+// document.querySelector(".en").addEventListener("click", changeLang("en"))
+
+
+let chooseLang = document.querySelector('#chooseLang')
+chooseLang.addEventListener('change', changeLang)
+function changeLang(e){
     let title = document.querySelector(".title")
-    title.innerHTML = window.I18N[lang]['title']
-    LANG = lang
+    title.innerHTML = I18N[e.target.value]['title']
+    LANG = e.target.value
     let container = document.querySelector('.video_container');
     container.innerHTML = ""
     makeRequest()
 }
+
 
 function makeRequest() {
     let xhr = new XMLHttpRequest();
