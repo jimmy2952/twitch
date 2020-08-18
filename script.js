@@ -1,9 +1,19 @@
 let offsetValue = 0;
+let LANG = "zh";
+
+function changeLang(lang){
+    let title = document.querySelector(".title")
+    title.innerHTML = window.I18N[lang]['title']
+    LANG = lang
+    let container = document.querySelector('.video_container');
+    container.innerHTML = ""
+    makeRequest()
+}
 
 function makeRequest() {
     let xhr = new XMLHttpRequest();
     let client_id = "agy3m667icgyejd2uj324kf03h5psb";
-    let url = `https://api.twitch.tv/kraken/streams/?game=Overwatch&limit=19&offset=${offsetValue}`
+    let url = `https://api.twitch.tv/kraken/streams/?limit=18&stream_type=all&offset=${offsetValue}&language=${LANG}`
 
     xhr.open("GET", url, true);
     offsetValue += 18
@@ -16,7 +26,9 @@ function makeRequest() {
                 let div = document.createElement('div');
                 div.innerHTML = `
                 <div class="preview_image_container">
-                    <img class="preview_image" src=${response.streams[i].preview.medium} onload="this.style.opacity=1" alt="">
+                    <a href="${response.streams[i].channel.url}" target="blank">
+                        <img class="preview_image" src=${response.streams[i].preview.medium} onload="this.style.opacity=1" alt="">
+                    </a>
                 </div>
                 <div class="information_container">
                     <div class="profile_image_container">
@@ -24,7 +36,7 @@ function makeRequest() {
                     </div>
                     <div class="intro">
                         <div class="channel">${response.streams[i].channel.name}</div>
-                        <div class="name">頻道追蹤人數：${response.streams[i].channel.followers}</div>
+                        <div class="name">${response.streams[i].channel.description}</div>
                     </div>
                 </div>
                 `

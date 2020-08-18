@@ -6,10 +6,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="lang-zh-tw.js"></script>
+    <script src="lang-en.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <section class="video_preview">
         <div class="mask">
+            <div class="menu">
+                <h1 class="title">用中文直播的頻道</h1>
+                <select onChange="changeLang(this.options[this.selectedIndex].value)">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+                <!-- <a onClick="changeLang('zh-tw')">中文</a>
+                <a onClick="changeLang('en')">English</a> -->
+            </div>
             <div class="video_container">
                 <!-- <div class="streamer_video">
                     <div class="preview_image_container">
@@ -26,8 +38,9 @@
                     </div>
                 </div> -->
             </div>
+            
         </div>
     </section>
-    <script src="script.js"></script>
+    
 </body>
 </html>
